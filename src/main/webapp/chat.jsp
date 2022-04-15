@@ -79,56 +79,75 @@
 
 
 	<!-- Chat  Start -->
-	<div>
-		<input type="text" id="sender" value="${sessionScope.member.m_id }"
-			style="display: none;"> <input type="text" id="messageinput">
-	</div>
-	<div>
-		<button type="button" onclick="openSocket();">Open</button>
-		<button type="button" onclick="send();">Send</button>
-		<button type="button" onclick="closeSocket();">Close</button>
-	</div>
-
-	<!-- Server responses get written here -->
-	<div id="messages"></div>
-
-	<script type="text/javascript">
+	 <div>
+        <button type="button" onclick="openSocket();">대화방 참여</button>
+        <button type="button" onclick="closeSocket();">대회방 나가기</button>
+    	<br/><br/><br/>
+  		메세지 입력 : 
+        <input type="text" id="sender" value="${member.memId}" style="display: none;">
+        <input type="text" id="messageinput">
+        <button type="button" onclick="send();">메세지 전송</button>
+        <button type="button" onclick="javascript:clearText();">대화내용 지우기</button>
+    </div>
+    <!-- Server responses get written here -->
+    <div id="messages">
+    </div>
+    <!-- websocket javascript -->
+    <script type="text/javascript">
         var ws;
-        var messages=document.getElementById("messages");
+        var messages = document.getElementById("messages");
         
         function openSocket(){
-            if(ws!==undefined && ws.readyState!==WebSocket.CLOSED){
+            if(ws !== undefined && ws.readyState !== WebSocket.CLOSED ){
                 writeResponse("WebSocket is already opened.");
                 return;
             }
             //웹소켓 객체 만드는 코드
-            ws=new WebSocket("ws://localhost:9080/rnb/echo.do");
+            //ws+내 프로젝트 host port 경로
+            ws = new WebSocket("ws://localhost:8081/fyn/echo.do");
             
-            ws.onopen=function(event){
-                if(event.data===undefined) return;
-                
+            //웹소켓 연결
+            ws.onopen = function(event){
+                if(event.data === undefined){
+              		return;
+                }
                 writeResponse(event.data);
             };
-            ws.onmessage=function(event){
+            
+            //메세지 전송
+            ws.onmessage = function(event){
+                console.log('writeResponse');
+                console.log(event.data)
                 writeResponse(event.data);
             };
-            ws.onclose=function(event){
-                writeResponse("Connection closed");
+            
+            //웹소켓 끊기
+            ws.onclose = function(event){
+                writeResponse("대화 종료");
             }
+            
         }
         
         function send(){
-            var text=document.getElementById("messageinput").value+","+document.getElementById("sender").value;
+           // var text=document.getElementById("messageinput").value+","+document.getElementById("sender").value;
+            var text = document.getElementById("messageinput").value+","+document.getElementById("sender").value;
             ws.send(text);
-            text="";
+            text = "";
         }
         
         function closeSocket(){
             ws.close();
         }
+        
         function writeResponse(text){
-            messages.innerHTML+="<br/>"+text;
+            messages.innerHTML += "<br/>"+text;
         }
+
+        function clearText(){
+            console.log(messages.parentNode);
+            messages.parentNode.removeChild(messages)
+      	}
+        
   </script>
 
 	<!-- Chat  End -->
