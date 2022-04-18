@@ -15,6 +15,22 @@
 
 <context:component-scan base-package="com.roh.fyn.controller" />
 
+<!-- 메세지 파일을 읽어오는 클래스 -->
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	<property name="basenames">
+		<list>
+			<value>message.a</value>
+		</list>
+	</property>
+</bean>
+<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+<mvc:interceptors>
+	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+</mvc:interceptors>
+
+<!-- 파일 입출력 -->
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	<property name="maxUploadSize" value="-1" />
 </bean>

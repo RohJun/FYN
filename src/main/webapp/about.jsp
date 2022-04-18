@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,23 +72,24 @@
                     <div class="d-flex flex-column">
                         <img class="img-fluid w-75 align-self-end" src="img/aboutpage.jpg" alt="">
                         <div class="w-50 bg-secondary p-5" style="margin-top: -25%;">
-                            <h1 class="text-uppercase mb-0" style="text-algin:center">   Jun Roh</h1>
+                            <h1 class="text-uppercase mb-0" style="text-algin:center"> <spring:message code="message.about.myname" /></h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p class="d-inline-block bg-secondary text-primary py-1 px-4">About Me</p>
-                    <h1 class="text-uppercase mb-4">More Than Just A Picture. Learn More About NFT</h1>
-                    <p>NFT is very popular all around the world. It's not just about making money, there are so much too learn more about these ART.</p>
-                    <p class="mb-4">I wish all of you can see what I can see. Find out more about myself by clicking on the links down below.</p>
+                    <p class="d-inline-block bg-secondary text-primary py-1 px-4"><spring:message code="message.about.sheader" /> </p>
+                    <a href="about.do?lang=ko">한국어</a> | <a href="about.do?lang=en">English</a>
+                    <h1 class="text-uppercase mb-4"><spring:message code="message.about.header" /> </h1>
+                    <p><spring:message code="message.about.contentone" /></p>
+                    <p class="mb-4"><spring:message code="message.about.contenttwo" /></p>
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <h3 class="text-uppercase mb-3">My Blog</h3>
-                            <p class="mb-0"><a href="https://junroh.tistory.com/">Check My Blog.</a> <br>For more information.</p>
+                            <h3 class="text-uppercase mb-3"><spring:message code="message.about.footerone" /> </h3>
+                            <p class="mb-0"><a href="https://junroh.tistory.com/"><spring:message code="message.about.sfooterone" /></a> <br><spring:message code="message.about.cfooterone" /></p>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="text-uppercase mb-3">My GitHub</h3>
-                            <p class="mb-0"><a href="https://github.com/RohJun/FYN.git">Check My Git.</a> <br>My codes are uploaded.</p>
+                            <h3 class="text-uppercase mb-3"><spring:message code="message.about.footertwo" /></h3>
+                            <p class="mb-0"><a href="https://github.com/RohJun/FYN.git"><spring:message code="message.about.sfootertwo" /></a> <br><spring:message code="message.about.cfootertwo" /></p>
                         </div>
                     </div>
                 </div>

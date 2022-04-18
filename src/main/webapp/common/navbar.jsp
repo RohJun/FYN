@@ -24,7 +24,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav ms-auto p-4 p-lg-0">
 				<a href="main.do" class="nav-item nav-link">Home</a> 
-				<a href="about.jsp" class="nav-item nav-link">About</a>
+				<a href="about.do" class="nav-item nav-link">About</a>
 				<a href="notice.do" class="nav-item nav-link">Notice</a>
 				<a href="chat.jsp" class="nav-item nav-link">Chat</a>
 				<!-- 회원전용 비회원 표시 X 회원 표시 O (장바구니, 마이페이지) -->
