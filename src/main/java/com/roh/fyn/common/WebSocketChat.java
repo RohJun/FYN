@@ -22,16 +22,16 @@ public class WebSocketChat {
     private static final List<Session> sessionList=new ArrayList<Session>();;
     private static final Logger logger = LoggerFactory.getLogger(WebSocketChat.class);
     public WebSocketChat() {
-        // TODO Auto-generated constructor stub
         System.out.println("웹소켓(서버) 객체생성");
     }
     
+    //웹소켓(서버 연결)
     @OnOpen
     public void onOpen(Session session) {
         logger.info("Open session id:"+session.getId());
         try {
             final Basic basic=session.getBasicRemote();
-            basic.sendText("대화방에 연결 되었습니다.");
+            basic.sendText("You have entered the Chat!");
         }catch (Exception e) {
             // TODO: handle exception
             System.out.println(e.getMessage());
@@ -39,12 +39,7 @@ public class WebSocketChat {
         sessionList.add(session);
     }
     
-    /*
-     * 모든 사용자에게 메시지를 전달한다.
-     * @param self
-     * @param sender
-     * @param message
-     */
+    //다른 유저들에게 메세지 전달
     private void sendAllSessionToMessage(Session self, String sender, String message) {
     	
         try {
@@ -54,16 +49,11 @@ public class WebSocketChat {
                 }
             }
         }catch (Exception e) {
-            // TODO: handle exception
             System.out.println(e.getMessage());
         }
     }
     
-    /*
-     * 내가 입력하는 메세지
-     * @param message
-     * @param session
-     */
+    //해당 회원이 입력하는 메세지
     @OnMessage
     public void onMessage(String message,Session session) {
     	
@@ -86,6 +76,7 @@ public class WebSocketChat {
         
     }
     
+    //웹소켓(서버) 연결 끊기
     @OnClose
     public void onClose(Session session) {
         logger.info("Session "+session.getId()+" has ended");
