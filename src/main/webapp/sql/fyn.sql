@@ -55,8 +55,6 @@ update member set memPic='/img/testmonial/profile03.png' where memId='junroh';
 -- NFT 테이블 생성
 create table nft(
 	nftId int primary key,
-	memId varchar(50),
-	constraint memFk foreign key (memId) references member (memId) on delete cascade,
 	nftTitle varchar(500) not null,
 	nftDate date DEFAULT SYSDATE,
 	nftPrice int,
@@ -66,37 +64,40 @@ create table nft(
 
 update nft set nftStatus=1 where nftId=1001;
 update nft set nftStatus=nftStatus+1 where nftId=1002;
-select * from nft where nftTitle like '%'||'Crypto'||'%' order by nftTitle DESC;
+select * from nft; where nftTitle like '%'||'Crypto'||'%' order by nftTitle DESC;
 
 insert into nft (nftId,nftTitle,nftPrice,nftPic) values((select nvl(max(nftId),1000)+1 from nft),'CryptoPunk 2234',5000,'/img/sample01.png');
 insert into nft (nftId,nftTitle,nftPrice,nftPic) values(3,'test',5000,'/test/testimg.png');
 
 insert into nft (nftId,nftTitle,nftPic) values (1000,"CryptoPunk #2234","sample01.png");
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1000,'CryptoPunk #1231',5000,'sample01.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1001,'CryptoPunk #2234',6000,'sample02.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1002,'CryptoPunk #6576',7000,'sample03.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1003,'CryptoPunk #9966',10000,'sample04.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1004,'CryptoPunk #3264',50000,'sample05.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1005,'CryptoPunk #0098',25000,'sample06.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1006,'CryptoPunk #7388',55000,'sample07.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1007,'CryptoPunk #5426',15000,'sample08.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1008,'CryptoPunk #8666',5000,'sample09.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1009,'CryptoPunk #3333',5000,'sample10.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1010,'CryptoPunk #1689',5000,'sample11.png');
-insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1011,'CryptoPunk #5100',5000,'sample12.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1050,'CryptoPunk1231',5000,'sample20.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1001,'CryptoPunk2234',6000,'sample02.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1002,'CryptoPunk6576',7000,'sample03.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1003,'CryptoPunk9966',10000,'sample04.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1004,'CryptoPunk3264',50000,'sample05.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1005,'CryptoPunk0098',25000,'sample06.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1006,'CryptoPunk7388',55000,'sample07.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1007,'CryptoPunk5426',15000,'sample08.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1008,'CryptoPunk8666',5000,'sample09.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1009,'CryptoPunk3333',5000,'sample10.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1010,'CryptoPunk1689',5000,'sample11.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1011,'CryptoPunk5100',5000,'sample12.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1012,'CryptoPunk5100',5000,'sample13.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1013,'CryptoPunk000',5000,'sample02.png');
+insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1014,'CryptoPunk111',5000,'sample01.png');
 insert into nft (nftId,nftTitle,nftPrice,nftPic) values (1012,'roh #5100',5000,'sample12.png');
 -- 기준 데이터 삽입(아이디 정리용)
 -- 식당 데이터 수정
-update nft set resName='왕할머니통닭',resAvg=0.5,resAdd='살포시 먹이구 잡으리',resPhone='02-123-4567',resCategory='한식',resPic='' where resId=101;
+update nft set nftPic='sample01.png' where nftId=1000;
 -- 식당 데이터 삭제
-delete from restaurant where nftId=1001;
+delete from nft where nftId=100;
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 create table cart(
 	cartId int primary key,
 	memId varchar(50),
-    constraint memFk foreign key (memId) references member (memId) on delete cascade,
+    constraint memFkey foreign key (memId) references member (memId) on delete cascade,
     memName varchar(20) not null,
 	nftId int,
     constraint nftFk foreign key (nftId) references nft (nftId) on delete cascade,

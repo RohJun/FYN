@@ -26,7 +26,7 @@
 				<a href="main.do" class="nav-item nav-link">Home</a> 
 				<a href="about.jsp" class="nav-item nav-link">About</a>
 				<a href="notice.do" class="nav-item nav-link">Notice</a>
-				<a href="contact.jsp" class="nav-item nav-link">Contact</a>
+				<a href="chat.jsp" class="nav-item nav-link">Chat</a>
 				<!-- 회원전용 비회원 표시 X 회원 표시 O (장바구니, 마이페이지) -->
 				<c:if test="${member.memId != null }">
 				<div class="nav-item dropdown">

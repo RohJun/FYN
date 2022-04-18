@@ -41,4 +41,10 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.getMemberList(vo);
 	}
 
+	@Override
+	public void purchaseMember(MemberVO vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

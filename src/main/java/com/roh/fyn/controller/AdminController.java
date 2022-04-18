@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.roh.fyn.member.MemberVO;
 import com.roh.fyn.member.impl.MemberDAO1;
@@ -73,14 +72,13 @@ public class AdminController {
 	@RequestMapping(value = "/adminInsertNft.do")
 	public String insertCart(NftVO vo, NftDAO1 nftDAO) throws IllegalStateException, IOException {
 		// 파일업로드 로직
-//		System.out.println("로그 AdC - NFT등록 요청"+vo.getUploadFile());
 		System.out.println("로그 AdC - NFT등록 요청"+vo);
 		MultipartFile uploadFile = vo.getUploadFile();
 		if (!uploadFile.isEmpty()) {
 			String nftPic = uploadFile.getOriginalFilename();
 			System.out.println("파일명: " + nftPic);
 			vo.setNftPic(nftPic);
-			uploadFile.transferTo(new File("C:\\Users\\junro\\eclipse-workspace\\SP_FYN\\src\\main\\webapp\\img\\" + nftPic));
+			uploadFile.transferTo(new File("C:\\Users\\junro\\eclipse-workspace\\SP_FYN_v1.0\\src\\main\\webapp\\img\\" + nftPic));
 		}
 		System.out.println(vo.getNftPic());
 		nftDAO.insertNft(vo);

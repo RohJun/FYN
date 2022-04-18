@@ -188,7 +188,7 @@
 						</div>
 
 					</div>
-					<!-- NFT -->
+					<!-- NFT 등록-->
 					<div class="col-sm-12 col-xl-6">
 						<div class="bg-secondary rounded h-100 p-4">
 							<form action="adminInsertNft.do" method="post" enctype="multipart/form-data">

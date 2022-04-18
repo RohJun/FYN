@@ -5,13 +5,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HairCut - Hair Salon HTML Template</title>
+    <title>FYN - Error Page</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/Favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Oswald:wght@600&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -44,45 +44,18 @@
 
 
     <!-- Navbar Start -->
-   <nav class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="mb-0 text-primary text-uppercase"><i class="fa fa-cut me-3"></i>HairCut</h1>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="team.html" class="dropdown-item">Our Barber</a>
-                        <a href="open.html" class="dropdown-item">Working Hours</a>
-                        <a href="testimonial.html" class="dropdown-item active">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="" class="btn btn-primary rounded-0 py-2 px-lg-4 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
+  <jsp:include page="common/navbar.jsp"></jsp:include>
     <!-- Navbar End -->
 
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5">
-            <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">404 Error</h1>
+            <h1 class="display-3 text-white text-uppercase mb-3 animated slideInDown">Error Page</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">404</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="main.do">Home</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">ERROR</li>
                 </ol>
             </nav>
         </div>
@@ -96,10 +69,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                    <h1 class="display-1">404</h1>
+                    <h1 class="display-1">ERROR</h1>
                     <h1 class="mb-4">Page Not Found</h1>
                     <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p>
-                    <a class="btn btn-primary py-3 px-5" href="">Go Back To Home</a>
+                    <a class="btn btn-primary py-3 px-5" href="main.do">Go Back To Home</a>
                 </div>
             </div>
         </div>
@@ -108,55 +81,7 @@
         
 
     <!-- Footer Start -->
-   <div class="container-fluid bg-secondary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-uppercase mb-4">Get In Touch</h4>
-                    <div class="d-flex align-items-center mb-2">
-                        <div class="btn-square bg-dark flex-shrink-0 me-3">
-                            <span class="fa fa-map-marker-alt text-primary"></span>
-                        </div>
-                        <span>Gangnam-gu, Seoul</span>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <div class="btn-square bg-dark flex-shrink-0 me-3">
-                            <span class="fa fa-phone-alt text-primary"></span>
-                        </div>
-                        <span>010 5005 1234</span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="btn-square bg-dark flex-shrink-0 me-3">
-                            <span class="fa fa-envelope-open text-primary"></span>
-                        </div>
-                        <span>junroh96@gmail.com</span>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-uppercase mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="about.jsp">About Us</a>
-                    <a class="btn btn-link" href="contact.jsp">Contact Us</a>
-                    <a class="btn btn-link" href="service.jsp">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="main.jsp">Find Your NFT</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<jsp:include page="common/footer.jsp"></jsp:include>
     <!-- Footer End -->
 
 

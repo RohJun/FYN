@@ -85,7 +85,7 @@
 			<div class="row g-0">
 				<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
 					<div class="h-100">
-						<img class="img-fluid h-100" src="${nftData.nftPic}" alt="">
+						<img class="img-fluid h-100" src="img/${nftData.nftPic}" alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">

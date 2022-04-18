@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.roh.fyn.member.MemberVO;
 import com.roh.fyn.member.impl.MemberDAO1;
@@ -36,18 +37,6 @@ public class MemberController {
 	}
 
 	// 회원가입
-//	@RequestMapping(value = "/signUp.do", method = RequestMethod.POST)
-//	public String login(MemberVO vo, MemberDAO1 memberDAO, HttpSession session) {
-//		System.out.println("로그 : MemC - 회원가입 요청");
-//		System.out.println("받았나?"+vo.getMemId());
-//		vo = memberDAO.getMember(vo);
-//		if (vo == null) {
-//			return "redirect:signUp.jsp";
-//		}
-//		session.setAttribute("member", vo);
-//		return "redirect:signIn.jsp";
-//	}
-
 	@RequestMapping("/signUp.do")
 	public String insertMember(MemberVO vo, MemberDAO1 memberDAO, Model model) {
 		System.out.println(vo.getMemId());
@@ -88,11 +77,14 @@ public class MemberController {
 		memberDAO.purchaseMember(vo);
 		vo=memberDAO.getMember(vo);
 		session.setAttribute("member", vo);
-		
-		
-		
-		
+
 		return "main.do";
-		
+	}
+	
+	//about 페이지 다국어 처리
+	@RequestMapping(value = "/about.do", method = RequestMethod.GET)
+	public String about_get() {
+		System.out.println("로그 : mC - about.do 요청");
+		return "about.jsp";
 	}
 }

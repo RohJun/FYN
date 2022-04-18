@@ -99,7 +99,7 @@
 				<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
 					<div class="team-item">
 						<div class="team-img position-relative overflow-hidden">
-							<img class="img-fluid" src="${nft.nftPic}" alt="" style=width:250px>
+							<img class="img-fluid" src="img/${nft.nftPic}" alt="" style=width:250px>
 							<div class="team-social">
 								<a class="btn btn-square" style="width:58px" href="nftDetail.do?nftId=${nft.nftId}">Details</a> 
 							</div>

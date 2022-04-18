@@ -63,14 +63,12 @@
 		<div class="container text-center py-5">
 			<h1
 				class="display-3 text-white text-uppercase mb-3 animated slideInDown">Your
-				Cart</h1>
+				CHAT</h1>
 			<nav aria-label="breadcrumb animated slideInDown">
 				<ol class="breadcrumb justify-content-center text-uppercase mb-0">
 					<li class="breadcrumb-item"><a class="text-white"
 						href="main.jsp">Home</a></li>
-					<li class="breadcrumb-item"><a class="text-white">My
-							Pages</a></li>
-					<li class="breadcrumb-item text-primary active" aria-current="page">Cart</li>
+					<li class="breadcrumb-item text-primary active" aria-current="page">Chat</li>
 				</ol>
 			</nav>
 		</div>
@@ -79,18 +77,22 @@
 
 
 	<!-- Chat  Start -->
-	 <div>
-        <button type="button" onclick="openSocket();">대화방 참여</button>
-        <button type="button" onclick="closeSocket();">대회방 나가기</button>
+	 <div class="bg-secondary text-center p-4">
+
+        <button type="button" class="btn btn-outline-primary m-2" onclick="openSocket();">JOIN CHAT</button>
+        <button type="button" class="btn btn-outline-primary m-2" onclick="closeSocket();">LEAVE CHAT</button>
     	<br/><br/><br/>
-  		메세지 입력 : 
-        <input type="text" id="sender" value="${member.memId}" style="display: none;">
-        <input type="text" id="messageinput">
-        <button type="button" onclick="send();">메세지 전송</button>
-        <button type="button" onclick="javascript:clearText();">대화내용 지우기</button>
+  		Your Message :  
+        <input type="text" class="form-control" id="sender" value="${member.memId}" style="display: none;">
+        <input type="text" class="form-control bg-transparent" id="messageinput">
+        <button type="button" class="btn btn-outline-danger m-2" onclick="send();">SEND</button>
+        
+        <!-- <button type="button" onclick="javascript:clearText();">대화내용 지우기</button> -->
     </div>
     <!-- Server responses get written here -->
+    <div class="bg-secondary text-left p-4" style=text-align:left>
     <div id="messages">
+    </div>
     </div>
     <!-- websocket javascript -->
     <script type="text/javascript">
@@ -123,13 +125,12 @@
             
             //웹소켓 끊기
             ws.onclose = function(event){
-                writeResponse("대화 종료");
+                writeResponse("LEAVE CHAT");
             }
             
         }
         
         function send(){
-           // var text=document.getElementById("messageinput").value+","+document.getElementById("sender").value;
             var text = document.getElementById("messageinput").value+","+document.getElementById("sender").value;
             ws.send(text);
             text = "";
@@ -140,6 +141,7 @@
         }
         
         function writeResponse(text){
+        	
             messages.innerHTML += "<br/>"+text;
         }
 

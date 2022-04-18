@@ -121,7 +121,7 @@
 				data-wow-delay="0.1s" style="max-width: 600px;">
 				<p class="d-inline-block bg-secondary text-primary py-1 px-4">
 					Cart</p>
-				<h1 class="text-uppercase">${member.memName }'sCart</h1>
+				<h1 class="text-uppercase">${member.memName }  'sCart</h1>
 			</div>
 			<div class="row g-4">
 			<c:forEach var="cart" items="${cartDatas }">
