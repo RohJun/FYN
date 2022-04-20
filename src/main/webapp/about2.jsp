@@ -72,24 +72,24 @@
                     <div class="d-flex flex-column">
                         <img class="img-fluid w-75 align-self-end" src="img/aboutpage.jpg" alt="">
                         <div class="w-50 bg-secondary p-5" style="margin-top: -25%;">
-                            <h1 class="text-uppercase mb-0" style="text-algin:center"> <spring:message code="message.about.myname" /></h1>
+                            <h1 class="text-uppercase mb-0" style="text-algin:center"> </h1>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p class="d-inline-block bg-secondary text-primary py-1 px-4"><spring:message code="message.about.sheader" /> </p>
-                    <a href="aboutpage.do?lang=ko">한국어</a> | <a href="aboutpage.do?lang=en">English</a>
-                    <h1 class="text-uppercase mb-4"><spring:message code="message.about.header" /> </h1>
-                    <p><spring:message code="message.about.contentone" /></p>
-                    <p class="mb-4"><spring:message code="message.about.contenttwo" /></p>
+                    <p class="d-inline-block bg-secondary text-primary py-1 px-4"></p>
+                    <a href="about.do?lang=ko">한국어</a> | <a href="about.do?lang=en">English</a>
+                    <h1 class="text-uppercase mb-4"></h1>
+                    <p></p>
+                    <p class="mb-4"></p>
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <h3 class="text-uppercase mb-3"><spring:message code="message.about.footerone" /> </h3>
-                            <p class="mb-0"><a href="https://junroh.tistory.com/"><spring:message code="message.about.sfooterone" /></a> <br><spring:message code="message.about.cfooterone" /></p>
+                            <h3 class="text-uppercase mb-3"> </h3>
+                            <p class="mb-0"><a href="https://junroh.tistory.com/"></a> asdfasdfasdfasfds<br></p>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="text-uppercase mb-3"><spring:message code="message.about.footertwo" /></h3>
-                            <p class="mb-0"><a href="https://github.com/RohJun/FYN.git"><spring:message code="message.about.sfootertwo" /></a> <br><spring:message code="message.about.cfootertwo" /></p>
+                            <h3 class="text-uppercase mb-3"></h3>
+                            <p class="mb-0"><a href="https://github.com/RohJun/FYN.git"></a> <br></p>
                         </div>
                     </div>
                 </div>

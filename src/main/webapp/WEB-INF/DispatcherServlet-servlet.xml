@@ -6,14 +6,21 @@
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd
 		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 
-<context:component-scan base-package="com.roh.fyn.controller" />
+
 
 <!-- 메세지 파일을 읽어오는 클래스 -->
 <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -49,4 +56,6 @@
 	</property>
 	<property name="defaultErrorView" value="404.jsp" />
 </bean>
+
+<context:component-scan base-package="com.roh.fyn.controller" />
 </beans>

@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.roh.fyn.member.MemberVO;
 import com.roh.fyn.member.impl.MemberDAO1;
@@ -80,10 +79,11 @@ public class MemberController {
 
 		return "main.do";
 	}
+
 	
 	//about 페이지 다국어 처리
-	@RequestMapping(value = "/about.do", method = RequestMethod.GET)
-	public String about_get() {
+	@RequestMapping("/aboutpage.do")
+	public String about_get(MemberVO vo) {
 		System.out.println("로그 : mC - about.do 요청");
 		return "about.jsp";
 	}

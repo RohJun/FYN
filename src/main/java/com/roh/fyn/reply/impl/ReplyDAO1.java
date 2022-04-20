@@ -94,7 +94,7 @@ public class ReplyDAO1 {
 				}
 				else {//검색
 					pstmt=conn.prepareStatement(REPLY_SELECTALL_MEMNAME);
-					pstmt.setString(1, vo.getMemId());
+					pstmt.setString(1, vo.getMemName());
 					ResultSet rs=pstmt.executeQuery();
 					while(rs.next()) {
 						//repDate(데이트) -> repRegDate(스트링)
