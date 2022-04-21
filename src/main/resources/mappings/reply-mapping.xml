@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ReplyDAO">
+
+	<resultMap type="reply" id="replyResult">
+		<id property="repId" column="repId" />
+		<result property="memId" column="memId" />
+		<result property="memName" column="memName" />
+		<result property="nftId" column="nftId" />
+		<result property="repTitle" column="repTitle" />
+		<result property="repContent" column="repContent" />
+		<result property="repDate" column="repDate" />
+	</resultMap>
+	
+	<!-- 댓글 리스트조회 nftID-->	
+	<select id="getReplyList" resultType="reply">
+		<if test="searchText == null">
+			SELECT * FROM REPLY WHERE NFTID=#{nftId}
+		</if>
+		<if test="searchText != null">
+			SELECT * FROM REPLY WHERE LOWER(MEMNAME) LIKE '%'|| LOWER(#{searchText}) ||'%' ORDER BY MEMNAME DESC
+		</if>
+	</select>
+	
+	<!-- 댓글 등록 -->
+	<insert id="insertReply">
+		INSERT INTO REPLY VALUES((SELECT NVL(MAX(REPID),3000)+1 FROM REPLY),#{memId},#{memName},#{nftId},#{repTitle},#{repContent}
+	</insert>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply">
+		DELETE REPLY WHERE REPID=#{repId}
+	</delete>
+
+</mapper>

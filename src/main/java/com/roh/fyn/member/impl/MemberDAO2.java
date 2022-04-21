@@ -63,7 +63,7 @@ public class MemberDAO2 {
 	// 회원정보수정-구매
 	public void purchaseMember(MemberVO vo) {
 		System.out.println("로그 : MDAO2 - purchaseMember()호출");
-		jdbcTemplate.update(MEMBER_UPDATE_PURCHASE, vo.getMemPassword(), vo.getMemId());
+		jdbcTemplate.update(MEMBER_UPDATE_PURCHASE, vo.getPurchasePrice(), vo.getMemId());
 	}
 
 	// 회원탈퇴

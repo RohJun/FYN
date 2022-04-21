@@ -6,7 +6,6 @@ public class ReplyVO {
 	private int repId;			// 댓글 번호(고유값)
 	private String memId;		// 댓글 회원 아이디(참조값)
 	private String memName;		// 댓글 회원 이름
-	private String memPic;		// 댓글 회원 사진
 	private int nftId;			// 댓글 nft 번호(참조값)
 	private String repTitle;	// 댓글 제목
 	private String repContent;	// 댓글 내용
@@ -32,12 +31,6 @@ public class ReplyVO {
 	}
 	public void setMemName(String memName) {
 		this.memName = memName;
-	}
-	public String getMemPic() {
-		return memPic;
-	}
-	public void setMemPic(String memPic) {
-		this.memPic = memPic;
 	}
 	public int getNftId() {
 		return nftId;
@@ -77,8 +70,8 @@ public class ReplyVO {
 	}
 	@Override
 	public String toString() {
-		return "ReplyVO [repId=" + repId + ", memId=" + memId + ", memName=" + memName + ", memPic=" + memPic
-				+ ", nftId=" + nftId + ", repTitle=" + repTitle + ", repContent=" + repContent + ", repDate=" + repDate
-				+ ", repRegDate=" + repRegDate + "]";
+		return "ReplyVO [repId=" + repId + ", memId=" + memId + ", memName=" + memName + ", nftId=" + nftId
+				+ ", repTitle=" + repTitle + ", repContent=" + repContent + ", repDate=" + repDate + ", repRegDate="
+				+ repRegDate + ", searchText=" + searchText + "]";
 	}
 }

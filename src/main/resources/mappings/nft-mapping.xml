@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="NftDAO">
+
+	<resultMap type="nft" id="nftResult">
+		<id property="nftId" column="nftId" />
+		<result property="nftTitle" column="nftTitle" />
+		<result property="nftDate" column="nftDate" />
+		<result property="nftPrice" column="nftPrice" />
+		<result property="nftPic" column="nftPic" />
+		<result property="nftStatus" column="nftStatus" />
+	</resultMap>
+	
+	<!-- nft조회 -->
+	<select id="getNft" resultMap="nftResult">
+		SELECT * FROM NFT WHERE NFTID=#{nftId}
+	</select>
+	
+	<!-- nft리스트조회 -->
+	<select id="getNftList" resultType="nft">
+		SELECT * FROM NFT
+		<if test="searchText != null">
+			AND NFTTITLE LIKE '%'||#{searchText}||'%'
+		</if>
+	</select>
+	
+	<!-- nft등록 -->
+	<insert id="insertNft">
+		INSERT INTO NFT VALUES((SELECT NVL(MAX(NFTID),1000)+1 FROM NFT),#{nftTitle},#{nftPrice},#{nftPic}
+	</insert>
+	
+	<!-- nft 수정 -->
+	<update id="updateNft">
+		UPDATE NFT SET NFTTITLE=#{nftTitle}, NFTPRICE=#{nftPrice}, NFTSTATUS=#{nftStatus} WHERE NFTID=#{nftId}	
+	</update>
+	
+	<!-- nft 수정 구매 -->
+	<update id="updateNftPurchase">
+		UPDATE NFT SET NFTSTATUS=NFTSTATUS+1 where NFTID=#{nftId}
+	</update>
+
+	<!-- nft 삭제 -->
+	<delete id="deleteNft">
+		DELETE NFT WHERE NFTID=#{nftId}
+	</delete>
+
+</mapper>

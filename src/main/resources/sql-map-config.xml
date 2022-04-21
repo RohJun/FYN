@@ -4,12 +4,21 @@
 
 	<!-- 별칭,별명,Alias 설정 -->
 	<typeAliases>
-		<typeAlias type="com.test.app.board.BoardVO" alias="board" />
+		<typeAlias type="com.roh.fyn.cart.CartVO" alias="cart" />
+		<typeAlias type="com.roh.fyn.member.MemberVO" alias="member" />
+		<typeAlias type="com.roh.fyn.nft.NftVO" alias="nft" />
+		<typeAlias type="com.roh.fyn.notice.NoticeVO" alias="notice" />
+		<typeAlias type="com.roh.fyn.reply.ReplyVO" alias="reply" />
+	
 	</typeAliases>
 	
 	<!-- Sql Mapper 연결 -->
 	<mappers>
-		<mapper resource="mappings/board-mapping.xml" />
+		<mapper resource="mappings/cart-mapping.xml" />
+		<mapper resource="mappings/member-mapping.xml" />
+		<mapper resource="mappings/nft-mapping.xml" />
+		<mapper resource="mappings/notice-mapping.xml" />
+		<mapper resource="mappings/reply-mapping.xml" />
 	</mappers>
 
 </configuration>

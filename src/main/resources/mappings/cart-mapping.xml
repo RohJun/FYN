@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CartDAO">
+
+	<resultMap type="cart" id="cartResult">
+		<id property="cartId" column="cartId" />
+		<result property="memId" column="memId" />
+		<result property="memName" column="memName" />
+		<result property="nftId" column="nftId" />
+		<result property="nftTitle" column="nftTitle" />
+		<result property="nftPrice" column="nftPrice" />
+	</resultMap>
+	
+	<!-- 장바구니 리스트 조회 (회원기준) -->
+	<select id="getCartList" resultType="cart">
+		SELECT * FROM CART WHERE cartId = #{cartId}
+	</select>
+	
+	<!-- 장바구니 등록 -->	
+	<insert id="insertCart">
+		INSERT INTO CART VALUES((SELECT NVL(MAX(CARTID),2000)+1 FROM BOARD),#{memId},#{memName},#{nftId},#{nftTitle},#{nftPrice})
+	</insert>
+	
+	<!-- 장바구니 삭제 -->
+	<delete id="deleteCart">
+		DELETE CART WHERE CARTID=#{cartId}
+	</delete>
+
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDAO">
+
+	<resultMap type="member" id="memberResult">
+		<id property="memId" column="memId" />
+		<result property="memPassword" column="memPassword" />
+		<result property="memName" column="memName" />
+		<result property="memEmail" column="memEmail" />
+		<result property="memPhone" column="memPhone" />
+		<result property="memMoney" column="memMoney" />
+		<result property="memRank" column="memRank" />
+	</resultMap>
+	
+	<!-- 회원조회 -->
+	<select id="getMember" resultMap="memberResult">
+		SELECT * FROM MEMBER WHERE MEMID=#{memId}
+	</select>
+	
+	<!-- 회원리스트조회 =검색-->
+	<select id="getMemberList" resultType="member">
+		SELECT * FROM MEMBER
+		<if test="searchText != null">
+			AND where lower(memName) like '%'|| lower#{searchText} ||'%' ORDER BY memName DESC
+		</if>
+	</select>
+
+	<!-- 회원 가입 -->
+	<insert id="insertMember">
+		INSERT INTO MEMBER VALUES(#{memId},#{memPassword},#{memName},#{memEmail},#{memPhone})
+	</insert>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="updateMember">
+		UPDATE MEMBER SET MEMPASSWORD=#{memPassword}, MEMNAME=#{memName}, MEMEMAIL=#{memEmail}, MEMPHONE=#{memPhone}, MEMMONEY=#{memMoney} WHERE MEMID=#{memId}
+	</update>
+	
+	<!-- 회원 정보 수정(구매) -->
+	<update id="purchaseMember">
+		UPDATE MEMBER SET MEMMONEY=MEMMONEY-#{purchasePrice} where MEMID=#{memId}
+	</update>
+
+	<!-- 회원탈퇴 -->
+	<delete id="deleteMember">
+		DELETE MEMBER WHERE MEMID=#{memId}
+	</delete>
+
+</mapper>
