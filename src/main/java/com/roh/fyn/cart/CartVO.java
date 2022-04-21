@@ -1,6 +1,18 @@
 package com.roh.fyn.cart;
 
+// 모델 버전 4를 확인하기위함 (해당클래스에 있는 주석)
+//@Entity 
+//@Table(name="CART")
 public class CartVO {
+	
+	/*
+	 * private static final long serialVersionUID = 1L;
+	public CartVO() {
+		super();
+	}
+	 */
+	
+	//@Id
 	private int cartId;			// 장바구니 번호(고유값)
 	private String memId;		// 장바구니 회원 아이디(참조값)
 	private String memName;		// 장바구니 회원명
