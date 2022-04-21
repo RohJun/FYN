@@ -35,7 +35,7 @@ public class LogAdvice {
 		System.out.println("반환값: "+returnObj);
 		if(returnObj instanceof MemberVO) { // 캐스팅 가능여부를 확인하는 로직
 			MemberVO vo= (MemberVO)returnObj; // 다운캐스팅
-			if(vo.getRole().equals("ADMIN")) {
+			if(vo.getMemRank()== 1) {
 				System.out.println("+++++ ADMIN +++++");
 			}
 			else {

@@ -96,11 +96,8 @@ public class MemberDAO1 {
 			pstmt.setString(3, vo.getMemName());
 			pstmt.setString(4, vo.getMemEmail());
 			pstmt.setString(5, vo.getMemPhone());
-
-			System.out.println("DAO : " + vo.getMemId());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			JDBCUtil.disconnect(pstmt, conn);

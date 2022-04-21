@@ -2,7 +2,6 @@ package com.roh.fyn.member.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.roh.fyn.common.JDBCUtil;
 import com.roh.fyn.member.MemberVO;
-import com.test.app.board.impl.BoardRowMapper;
 
 @Repository("memberDAO")
 public class MemberDAO2 {
@@ -83,7 +80,7 @@ public class MemberDAO2 {
 		// 검색리스트조회
 		else {
 			Object[] args = { vo.getSearchText() };
-			return jdbcTemplate.query(MEMBER_SELECTALL, args, new MemberRowMapper());
+			return jdbcTemplate.query(MEMBER_SELECTALL_MEMNAME, args, new MemberRowMapper());
 		}
 	}
 }

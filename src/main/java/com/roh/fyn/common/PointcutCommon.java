@@ -5,8 +5,8 @@ import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class PointcutCommon {
-	@Pointcut("execution(* com.test.app..*Impl.*(..))")
+	@Pointcut("execution(* com.roh.fyn..*Impl.*(..))")
 	public void aPointcut() {} // 참조 메서드
-	@Pointcut("execution(* com.test.app..*Impl.get*(..))")
+	@Pointcut("execution(* com.roh.fyn..*Impl.get*(..))")
 	public void bPointcut() {}
 }
