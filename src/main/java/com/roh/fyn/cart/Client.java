@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 public class Client { // 클라이언트,사용자,브라우저
 	public static void main(String[] args) {
 		
-		EntityManagerFactory emf=Persistence.createEntityManagerFactory("day79_0421_02");
+		EntityManagerFactory emf=Persistence.createEntityManagerFactory("SP_FYN_v1.80");
 		EntityManager em=emf.createEntityManager();
 		CartVO vo=new CartVO();
 		vo.setCartId(11111); // 시퀀스 미생성

@@ -167,29 +167,30 @@
 									<thead>
 										<tr>
 											<th scope="col">Name</th>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Details</th>
+											<th scope="col">ID</th>
+											<th scope="col">Email</th>
+											<th scope="col">Status</th>
+											<th scope="col">Details</th>
 										</tr>
 									</thead>
 									<c:forEach var="member" items="${memDatas}">
-                                    <tbody>
-                                        <tr>
-                                            <td scope="row">${member.memName}</td>
-                                            <td>${member.memId}</td>
-                                            <td>${member.memEmail}</td>
-                                            <c:if test="${member.memRank==0}">
-                                            <td>Member</td>
-                                            </c:if>
-                                            <c:if test="${member.memRank==1}">
-                                            <td>Admin</td>
-                                            </c:if>
-                                            <td> <a href="adminMemberDetail.do?memId=${member.memId }" class="btn btn-outline-primary m-2">Details</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    </c:forEach>
+										<tbody>
+											<tr>
+												<td scope="row">${member.memName}</td>
+												<td>${member.memId}</td>
+												<td>${member.memEmail}</td>
+												<c:if test="${member.memRank==0}">
+													<td>Member</td>
+												</c:if>
+												<c:if test="${member.memRank==1}">
+													<td>Admin</td>
+												</c:if>
+												<td><a
+													href="adminMemberDetail.do?memId=${member.memId }"
+													class="btn btn-outline-primary m-2">Details</a></td>
+											</tr>
+										</tbody>
+									</c:forEach>
 								</table>
 							</div>
 						</div>
@@ -197,7 +198,7 @@
 				</div>
 			</div>
 			<!-- Member Search End -->
-			
+
 			<!-- Reply Search Start -->
 			<div class="container-fluid pt-4 px-4">
 				<div class="row g-4">
@@ -229,7 +230,7 @@
 					</div>
 				</div>
 			</div>
-			 <!-- Reply Search End -->
+			<!-- Reply Search End -->
 
 			<!-- Footer Start -->
 			<jsp:include page="admin_common/footer.jsp"></jsp:include>

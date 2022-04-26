@@ -47,14 +47,14 @@
 	<property name="exceptionMappings">
 		<props>
 			<prop key="java.lang.IllegalArgumentException">
-				404.jsp
+				error.jsp
 			</prop>
 			<prop key="java.lang.NullPointerException">
-				404.jsp
+				error.jsp
 			</prop>
 		</props>
 	</property>
-	<property name="defaultErrorView" value="404.jsp" />
+	<property name="defaultErrorView" value="error.jsp" />
 </bean>
 
 <context:component-scan base-package="com.roh.fyn.controller" />

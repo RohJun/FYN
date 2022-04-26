@@ -12,7 +12,7 @@ import com.roh.fyn.cart.CartVO;
 public class CartServiceImpl implements CartService{
 
 	@Autowired	//DI
-	private CartDAO1 cartDAO;
+	private CartDAO4 cartDAO;
 	
 	@Override
 	public void insertCart(CartVO vo) {
