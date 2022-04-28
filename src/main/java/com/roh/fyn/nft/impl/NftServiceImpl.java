@@ -9,11 +9,11 @@ import com.roh.fyn.nft.NftService;
 import com.roh.fyn.nft.NftVO;
 
 @Service("nftService")
-public class NftServiceImpl implements NftService{
+public class NftServiceImpl implements NftService {
 
 	@Autowired // DI
 	private NftDAO1 nftDAO;
-	
+
 	@Override
 	public NftVO getNft(NftVO vo) {
 		// TODO Auto-generated method stub

@@ -54,9 +54,10 @@ public class MemberController {
 
 	// 회원탈퇴
 	@RequestMapping("/deleteMember.do")
-	public String deleteMember(MemberVO vo, MemberDAO1 memberDAO) {
+	public String deleteMember(MemberVO vo, MemberDAO1 memberDAO, HttpSession session) {
 		memberDAO.deleteMember(vo);
-		return "redirect:main.do";
+		session.invalidate();
+		return "main.do";
 	}
 
 	// 회원 마이페이지 상세보기
@@ -69,19 +70,19 @@ public class MemberController {
 
 	// 회원 구매
 	@RequestMapping("/purchaseMember.do")
-	public String purchaseMember(MemberVO vo, MemberDAO1 memberDAO, Model model, NftVO nftvo, HttpSession session, NftDAO1 nftdao) {
-		System.out.println("로그: MC - purchaseMember요청"+vo.getMemId()+vo.getPurchasePrice());
-		System.out.println("로그 MC - purchaseMember요청 "+nftvo.getNftId());
+	public String purchaseMember(MemberVO vo, MemberDAO1 memberDAO, Model model, NftVO nftvo, HttpSession session,
+			NftDAO1 nftdao) {
+		System.out.println("로그: MemController - purchaseMember요청" + vo.getMemId() + vo.getPurchasePrice());
+		System.out.println("로그: MC - purchaseMember요청 " + nftvo.getNftId());
 		nftdao.updateNftPurchase(nftvo);
 		memberDAO.purchaseMember(vo);
-		vo=memberDAO.getMember(vo);
+		vo = memberDAO.getMember(vo);
 		session.setAttribute("member", vo);
 
 		return "main.do";
 	}
 
-	
-	//about 페이지 다국어 처리
+	// about 페이지 다국어 처리
 	@RequestMapping("/aboutpage.do")
 	public String about_get(MemberVO vo) {
 		System.out.println("로그 : mC - about.do 요청");

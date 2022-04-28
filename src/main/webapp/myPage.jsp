@@ -128,7 +128,7 @@
 								for="floatingInput">Money</label>
 						</div>
 						<button type="submit" class="btn btn-primary py-3 w-50 mb-4">Update</button>
-						<a class="btn btn-primary py-3 w-50 mb-4" href="memDelete.do">Withdrawal</a>
+						<a class="btn btn-primary py-3 w-50 mb-4" href="deleteMember.do?memId=${member.memId }">Withdrawal</a>
 					</form>
 				</div>
 			</div>

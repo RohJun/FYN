@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.roh.fyn.cart.CartVO;
 import com.roh.fyn.cart.impl.CartDAO1;
+import com.roh.fyn.member.MemberVO;
+import com.roh.fyn.member.impl.MemberDAO1;
+import com.roh.fyn.nft.NftVO;
+import com.roh.fyn.nft.impl.NftDAO1;
 
 @Controller
 public class CartController {
@@ -38,6 +42,17 @@ public class CartController {
 	public String deleteCart(CartVO vo,CartDAO1 cartDAO) {
 		cartDAO.deleteCart(vo);
 		return "redirect:cart.do";
+	}
+	
+	//장바구니 구매
+	@RequestMapping(value="/purchaseCart.do")
+	public String purchaseCart(CartVO cvo, CartDAO1 cartDAO,NftDAO1 nftdao,MemberDAO1 memberDAO, NftVO nvo, MemberVO mvo, HttpSession session ) {
+		cartDAO.deleteCart(cvo);
+		nftdao.updateNftPurchase(nvo);
+		memberDAO.purchaseMember(mvo);
+		mvo = memberDAO.getMember(mvo);
+		session.setAttribute("member", mvo);
+		return "redirect:main.do";
 	}
 	
 }

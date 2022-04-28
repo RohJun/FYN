@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
+<link href="img/Favicon.ico" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,41 +56,7 @@
 
 
 	<!-- Navbar Start -->
-	<nav
-		class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn"
-		data-wow-delay="0.1s">
-		<a href="main.jsp" class="navbar-brand ms-4 ms-lg-0">
-			<h1 class="mb-0 text-primary text-uppercase">
-				<i class="fa-solid fa-handshake"></i> FYN
-			</h1>
-		</a>
-		<button type="button" class="navbar-toggler me-4"
-			data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<a href="main.jsp" class="nav-item nav-link">Home</a> <a
-					href="about.jsp" class="nav-item nav-link">About</a> <a
-					href="notice.jsp" class="nav-item nav-link">Notice</a> <a
-					href="contact.jsp" class="nav-item nav-link">Contact</a>
-				<!-- 회원전용 비회원 표시 X 회원 표시 O (장바구니, 마이페이지) -->
-				<div class="nav-item dropdown">
-					<a href="#" class="nav-link dropdown-toggle active"
-						data-bs-toggle="dropdown">My Pages</a>
-					<div class="dropdown-menu m-0">
-						<a href="myPage.jsp" class="dropdown-item">My Page</a> <a
-							href="myCart.jsp" class="dropdown-item">My Cart</a>
-					</div>
-				</div>
-			</div>
-			<!-- 비회원 로그인/회원가입버튼  회원 로그인 후 로그아웃 버튼으로 변경-->
-			<a href="signIn.jsp"
-				class="btn btn-primary rounded-0 py-2 px-lg-4 d-none d-lg-block">Sign
-				In/Sign Up<i class="fa fa-arrow-right ms-3"></i>
-			</a>
-		</div>
-	</nav>
+	<jsp:include page="common/navbar.jsp"></jsp:include>
 	<!-- Navbar End -->
 
 
@@ -121,28 +88,25 @@
 				data-wow-delay="0.1s" style="max-width: 600px;">
 				<p class="d-inline-block bg-secondary text-primary py-1 px-4">
 					Cart</p>
-				<h1 class="text-uppercase">${member.memName }  'sCart</h1>
+				<h1 class="text-uppercase">${member.memName }'s  Cart</h1>
 			</div>
 			<div class="row g-4">
+			<c:if test="${fn:length(cartDatas)==0}">
+				<h1 class="text-uppercase" style=margin:center>Cart is Empty</h1>
+			</c:if>
 			<c:forEach var="cart" items="${cartDatas }">
 				<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
 
 					<div
 						class="service-item position-relative overflow-hidden bg-secondary d-flex h-100 p-5 ps-0">
 						
-							<div
-								class="bg-dark d-flex flex-shrink-0 align-items-center justify-content-center"
-								style="width: 60px; height: 60px;">
-								<img class="img-fluid" src="img/haircut.png" alt="">
-							</div>
 							<div class="ps-4">
 								<h3 class="text-uppercase mb-3">${cart.nftTitle }</h3>
 								<p>PRICE : ${cart.nftPrice }</p>
 								<a class="text-uppercase text-primary"
-									href="purchaseMember.do?memId=${cart.memId }&nftId=${cart.nftId}">Purchase</a>
+									href="purchaseCart.do?memId=${cart.memId }&nftId=${cart.nftId}">Purchase</a>
 							</div>
-							<a class="btn btn-square" href=""><i
-								class="fa fa-plus text-primary"></i></a>
+							<a class="btn btn-square" href="nftDetail.do?nftId=${cart.nftId }">Details</a>
 						
 					</div>
 

@@ -22,7 +22,7 @@ public class CartVO {
 	private String memName;		// 장바구니 회원명
 	private int nftId;			// nft 번호(참조값)
 	private String nftTitle;	// nft 제목
-	private int nftPrice;	// nft 가격
+	private int nftPrice;		// nft 가격
 	
 	//getter setter
 	public int getCartId() {

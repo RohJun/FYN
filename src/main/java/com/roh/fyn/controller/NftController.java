@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.roh.fyn.member.MemberVO;
 import com.roh.fyn.nft.NftVO;
 import com.roh.fyn.nft.impl.NftDAO1;
 import com.roh.fyn.reply.ReplyVO;
@@ -27,7 +26,7 @@ public class NftController {
 		return "main.jsp";
 	}
 
-	// 상세페이지 + 댓글해야함
+	// 상세페이지 + 댓글
 	@RequestMapping(value = "/nftDetail.do")
 	public String getNftReply(NftVO vo, NftDAO1 nftDAO, Model model, ReplyVO rvo, ReplyDAO1 repDAO) {
 

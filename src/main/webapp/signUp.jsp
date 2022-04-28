@@ -57,23 +57,23 @@
                         </div>
                         <form action="signUp.do" method="post">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="memId" placeholder="ID" name="memId">
+                            <input type="text" class="form-control" id="memId" placeholder="ID" name="memId" required>
                         	<label for="floatingInput">ID</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="memPassword" placeholder="Password"name="memPassword">
+                            <input type="password" class="form-control" id="memPassword" placeholder="Password"name="memPassword" required>
                         	<label for="floatingInput">Password</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="memName" placeholder="Name" name="memName">
+                            <input type="text" class="form-control" id="memName" placeholder="Name" name="memName" required>
                         	<label for="floatingInput">Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="memEmail" placeholder="Email address" name="memEmail">
+                            <input type="email" class="form-control" id="memEmail" placeholder="Email address" name="memEmail" required>
                         	<label for="floatingInput">Email Address</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="memPhone" placeholder="PhoneNumber" name="memPhone">
+                            <input type="text" class="form-control" id="memPhone" placeholder="PhoneNumber" name="memPhone" required>
                             <label for="floatingInput">PhoneNumber</label>
                         </div>
                         <input type="submit" class="btn btn-primary py-3 w-100 mb-4" value="Sign Up">

@@ -33,8 +33,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-uppercase mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="about.jsp">About Us</a>
-                    <a class="btn btn-link" href="contact.jsp">Contact Us</a>
+                    <a class="btn btn-link" href="aboutpage.do">About Us</a>
                     <a class="btn btn-link" href="main.do">Our Services</a>
                     <a class="btn btn-link" href="notice.do">Notice</a>
                 </div>
