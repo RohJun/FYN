@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.roh.fyn.common.JDBCUtil;
 import com.roh.fyn.notice.NoticeVO;
 
-@Repository("noticeDAO")
+//@Repository("noticeDAO")
 public class NoticeDAO1 {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.roh.fyn.notice.NoticeVO;
 
-@Repository("noticeDAO")
+//@Repository("noticeDAO")
 public class NoticeDAO2 {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

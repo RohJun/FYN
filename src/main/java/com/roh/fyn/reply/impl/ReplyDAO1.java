@@ -11,11 +11,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.roh.fyn.common.JDBCUtil;
-import com.roh.fyn.nft.NftVO;
 import com.roh.fyn.reply.ReplyVO;
 
-@Repository("replyDAO")
-
+//@Repository("replyDAO")
 public class ReplyDAO1 {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;

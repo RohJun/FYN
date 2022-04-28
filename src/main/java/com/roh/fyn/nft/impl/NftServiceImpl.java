@@ -12,7 +12,7 @@ import com.roh.fyn.nft.NftVO;
 public class NftServiceImpl implements NftService {
 
 	@Autowired // DI
-	private NftDAO1 nftDAO;
+	private NftDAO3 nftDAO;
 
 	@Override
 	public NftVO getNft(NftVO vo) {

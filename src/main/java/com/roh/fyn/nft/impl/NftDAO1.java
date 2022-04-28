@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.roh.fyn.common.JDBCUtil;
 import com.roh.fyn.nft.NftVO;
 
-@Repository("nftDAO")
+//@Repository("nftDAO")
 public class NftDAO1 {
 	Connection conn;
 	private PreparedStatement pstmt = null;

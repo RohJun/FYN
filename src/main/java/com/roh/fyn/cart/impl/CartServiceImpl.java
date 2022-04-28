@@ -9,11 +9,11 @@ import com.roh.fyn.cart.CartService;
 import com.roh.fyn.cart.CartVO;
 
 @Service("cartService")
-public class CartServiceImpl implements CartService{
+public class CartServiceImpl implements CartService {
 
-	@Autowired	//DI
-	private CartDAO1 cartDAO;
-	
+	@Autowired // DI
+	private CartDAO3 cartDAO;
+
 	@Override
 	public void insertCart(CartVO vo) {
 		// TODO Auto-generated method stub

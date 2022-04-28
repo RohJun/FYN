@@ -12,7 +12,7 @@ import com.roh.fyn.reply.ReplyVO;
 public class ReplyServiceImpl implements ReplyService{
 
 	@Autowired	//DI
-	private ReplyDAO1 replyDAO;
+	private ReplyDAO3 replyDAO;
 	
 	@Override
 	public void insertReply(ReplyVO vo) {

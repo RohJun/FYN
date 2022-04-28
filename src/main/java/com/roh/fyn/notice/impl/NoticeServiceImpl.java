@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import com.roh.fyn.notice.NoticeService;
 import com.roh.fyn.notice.NoticeVO;
 
-@Service("notieService")
+@Service("noticeService")
 public class NoticeServiceImpl implements NoticeService{
 
 	@Autowired //DI
-	private NoticeDAO1 noticeDAO;
+	private NoticeDAO3 noticeDAO;
 	
 	@Override
 	public void insertNotice(NoticeVO vo) {

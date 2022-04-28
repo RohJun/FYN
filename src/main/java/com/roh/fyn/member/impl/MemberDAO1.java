@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.roh.fyn.common.JDBCUtil;
 import com.roh.fyn.member.MemberVO;
 
-@Repository("memberDAO")
+//@Repository("memberDAO")
 public class MemberDAO1 {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;

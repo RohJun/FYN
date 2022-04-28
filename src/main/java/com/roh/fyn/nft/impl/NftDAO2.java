@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.roh.fyn.nft.NftVO;
 
-@Repository("nftDAO")
+//@Repository("nftDAO")
 public class NftDAO2 {
 
 	@Autowired

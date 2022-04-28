@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.roh.fyn.cart.CartVO;
 import com.roh.fyn.common.JDBCUtil;
 
-@Repository("cartDAO")
+//@Repository("cartDAO")
 public class CartDAO1 {
 
 	private Connection conn = null;

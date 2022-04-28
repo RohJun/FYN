@@ -12,7 +12,7 @@ import com.roh.fyn.member.MemberVO;
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired // 메모리에 해당타입이 존재하는지 확인
-	private MemberDAO1 memberDAO;
+	private MemberDAO3 memberDAO;
 	
 	@Override
 	public MemberVO getMember(MemberVO vo) {

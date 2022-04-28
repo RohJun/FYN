@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.roh.fyn.member.MemberVO;
 
-@Repository("memberDAO")
+//@Repository("memberDAO")
 public class MemberDAO2 {
 
 	@Autowired

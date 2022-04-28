@@ -12,8 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.roh.fyn.reply.ReplyVO;
 
-@Repository("replyDAO")
-
+//@Repository("replyDAO")
 public class ReplyDAO2 {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

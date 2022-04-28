@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.roh.fyn.cart.CartVO;
 
-@Repository("cartDAO")
+//@Repository("cartDAO")
 public class CartDAO2 {
 
 	@Autowired
